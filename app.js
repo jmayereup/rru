@@ -2,7 +2,10 @@ angular.module('app', ['firebase'])
 
 .controller('MainCtrl', ['$scope', '$firebaseArray', 
 function($scope, $firebaseArray) {
-          //CREATE A FIREBASE REFERENCE
+ 
+ 
+ 
+/* //CREATE A FIREBASE REFERENCE
           var ref = new Firebase("https://amber-torch-7838.firebaseio.com/");
 
           // GET MESSAGES AS AN ARRAY
@@ -26,5 +29,12 @@ function($scope, $firebaseArray) {
               $scope.msg = "";
             }
           };
+ref.authAnonymously(function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+*/
 }
 ]);
