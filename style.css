@@ -9,12 +9,6 @@ body {
 
 }
 
-.navbar {
-  background-color: #adad85;
-  padding: 3px;
-  border-bottom-style: hidden;
-}
-
 .navbar a {
   color: white;
 }
@@ -23,6 +17,6 @@ p {
   font-size: medium;
 }
 
-.panel .panel-heading {
-  background-color: #adad85;
+.well {
+  opacity: .8;
 }
