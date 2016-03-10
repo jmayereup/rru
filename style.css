@@ -3,8 +3,26 @@ body {
   padding-top: 70px; 
   background-image: url("img/background-main.jpg");
   background-repeat: repeat;
+  font-size: large;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border-bottom-style: hidden;
+
 }
 
-.nav-pills {
-  color: green;
+.navbar {
+  background-color: #adad85;
+  padding: 3px;
+  border-bottom-style: hidden;
+}
+
+.navbar a {
+  color: white;
+}
+
+p {
+  font-size: medium;
+}
+
+.panel .panel-heading {
+  background-color: #adad85;
 }
