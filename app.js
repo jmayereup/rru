@@ -1,7 +1,33 @@
-angular.module('app', ['firebase'])
+var app = angular.module('app', ['ngRoute']);
 
-.controller('MainCtrl', ['$scope', '$firebaseArray', 
-function($scope, $firebaseArray) {
+app.config(['$routeProvider', function($routeProvider){
+  $routeProvider
+    .when('/home', {
+      templateUrl: 'views/home.html',
+      controller: 'MainCtrl'
+    })
+    .when('/e1', {
+      templateUrl: 'views/e1.html',
+      controller: 'MainCtrl'
+    })
+    .when('/e2', {
+      templateUrl: 'views/e2.html',
+      controller: 'MainCtrl'
+    })
+    .when('/e3', {
+      templateUrl: 'views/e3.html',
+      controller: 'MainCtrl'
+    })
+    .when('/resources', {
+      templateUrl: 'views/resources.html',
+      controller: 'MainCtrl'
+    })
+    .otherwise({redirectTo: '/'});
+  
+}]);
+
+app.controller('MainCtrl', ['$scope',
+function($scope) {
  
  
  
@@ -36,5 +62,4 @@ ref.authAnonymously(function(error, authData) {
     console.log("Authenticated successfully with payload:", authData);
   }
 */
-}
-]);
+}]);
