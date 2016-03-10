@@ -3,39 +3,42 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-</head>
+
+ </head>
 
 <body ng-app="app" ng-controller="MainCtrl as mc">
-    
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <ul class="nav nav-pills">
-                <li role="presentation"><a href="#/home">Home</a></li>
-                <li role="presentation"><a href="#/e1">English 1</a></li>
-                <li role="presentation"><a href="#/e2">English 2</a></li>
-                <li role="presentation"><a href="#/e3">English 3</a></li>
-                <li role="presentation"><a href="#/resources">Resources</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="container-fluid" >  
+<jm-navbar></jm-navbar>
 
     <div ng-view class="well"></div>
 
     </div>
+</div>
+
+<!--  <pre>$location.path() = {{$location.path()}}</pre>
+  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre> -->
+
+
     <!--Scripts at bottom for faster loading-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
     <script src="app.js"></script>
+    <script src="app/layout/navbar.directive.js"></script>
+    
 
-    <!--    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+<!--    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
 -->
-
 
 </body>
 
