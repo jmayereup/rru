@@ -1,16 +1,19 @@
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute', 'firebase'])
 
-.controller('MainCtrl', function($scope, $route, $routeParams, $location) {
-     $scope.$route = $route;
-     $scope.$location = $location;
-     $scope.$routeParams = $routeParams;
- })
+
+.controller('MainCtrl',
+  function($firebaseArray) {
+
+  })
+
+
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
   $routeProvider
     .when('/home', {
       templateUrl: 'views/home.html',
-      controller: 'MainCtrl'
+      controller: 'MsgCtrl',
+      controllerAs: 'vm'
     })
     .when('/e1', {
       templateUrl: 'views/e1.html',
@@ -27,6 +30,16 @@ angular.module('app', ['ngRoute'])
     .when('/resources', {
       templateUrl: 'views/resources.html',
       controller: 'MainCtrl'
+    })
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'LoginCtrl',
+      controllerAs: 'vm'
+    })
+    .when('/create', {
+      templateUrl: "views/create.html",
+      controller: 'CreateCtrl',
+      controllerAs: 'vm'
     })
     .otherwise({redirectTo: '/home'});
   

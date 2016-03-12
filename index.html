@@ -2,23 +2,26 @@
 <html lang="en-US">
 
 <head>
+    <title>ILC@RRU</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">-->
     <link rel="stylesheet" href="style.css">
 
  </head>
 
 <body ng-app="app" ng-controller="MainCtrl as mc">
-<div class="container-fluid" >  
-<jm-navbar></jm-navbar>
+<div layout="row" >  
+  <jm-navbar></jm-navbar>
 
-    <div ng-view class="well"></div>
+  <div ng-view></div> 
 
-    </div>
 </div>
+
+
 
 <!--  <pre>$location.path() = {{$location.path()}}</pre>
   <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
@@ -30,15 +33,28 @@
     <!--Scripts at bottom for faster loading-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
-    <script src="app.js"></script>
-    <script src="app/layout/navbar.directive.js"></script>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>-->
 
-<!--    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
--->
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+
+    
+    <script src="app.js"></script>
+    <script src="app/msg-ctrl.js"></script>
+    <script src="app/login-ctrl.js"></script>
+    <script src="app/create-ctrl.js"></script>
+    <script src="app/layout/navbar.directive.js"></script>
+
+
 
 </body>
 

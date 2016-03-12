@@ -1,4 +1,31 @@
-<div>
-  <p>This site contains resources to help you study for tests and beyond.</p>
+<div class="white">
+  <p>This site contains resources to help you study for tests and more.</p>
   <p>Also, check out our Facebook Group: <a href="https://www.facebook.com/groups/501298370031345/" target="_blank">RRU-ILC</a></p>
+</div>
+<div></div>
+<!--Data Form -->
+<div>
+<div class="white">
+  
+    <h3>Message Board: </h3>
+    <div ng-repeat="x in vm.myData" layout="column" flex="100" class="white">
+      <div>{{x.from}}
+        <button ng-hide="!vm.canSubmit" type="button" value="Delete" ng-click="vm.deleteMsg(x.$id)" class="btn btn-danger pull-right">DELETE</button>
+      </div>
+      <p class="inset">Message: {{x.body}} <span class="pull-right">Tag:{{x.tag}}</span></p>
+
+    </div>
+  </div>
+  <div></div>
+  <div class="white" ng-hide="!vm.canSubmit">
+    <form>
+      <p>From:
+        <input type="text" ng-model="from" /> Tag:
+        <input type="text" ng-model="tag" />
+      </p>
+      <p>Message:</p>
+      <textarea class="form-control" rows="3" ng-model="msg"></textarea>
+      <input class="btn btn-default" type="submit" value="Submit" ng-click="vm.addMsg(from, msg, tag)"/>
+    </form>
+  </div>
 </div>
