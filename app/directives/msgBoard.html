@@ -14,12 +14,12 @@
   <div class="white" ng-hide="!vm.canSubmit">
     <form>
       <p>From:
-        <input type="text" ng-model="from" /> Tag:
-        <input type="text" ng-model="tag" />
+        <input type="text" ng-model="m.from" /> Tag:
+        <input type="text" ng-model="m.tag" />
       </p>
       <p>Message:</p>
-      <textarea class="form-control" rows="3" ng-model="msg"></textarea>
-      <input class="btn btn-default" type="submit" value="Submit" ng-click="vm.addMsg(from, msg, tag)"/>
+      <textarea class="form-control" rows="3" ng-model="m.msg"></textarea>
+      <input class="btn btn-default" type="submit" value="Submit" ng-click="vm.addMsg(m)"/>
     </form>
   </div>
 </div>

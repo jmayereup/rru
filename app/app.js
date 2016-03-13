@@ -1,30 +1,30 @@
 var app = angular.module('app', ['ngRoute', 'firebase']);
 
-app.controller('MainCtrl',
-  function($firebaseArray) {
-
-  });
-
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/home', {
       templateUrl: 'app/views/home.html',
+      controllerAs: 'vm'
     })
     .when('/e1', {
       templateUrl: 'app/views/e1.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      controllerAs: 'vm'
     })
     .when('/e2', {
       templateUrl: 'app/views/e2.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      controllerAs: 'vm'
     })
     .when('/e3', {
       templateUrl: 'app/views/e3.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      controllerAs: 'vm'
     })
     .when('/resources', {
       templateUrl: 'app/views/resources.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      controllerAs: 'vm'
     })
     .when('/login', {
       templateUrl: 'app/views/login.html',
