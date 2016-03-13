@@ -1,0 +1,39 @@
+body { 
+  
+  padding-top: 70px; 
+  background-image: url("img/background-main.jpg");
+  background-repeat: repeat;
+  font-size: large;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border-bottom-style: hidden;
+
+}
+
+.navbar a {
+  color: white;
+}
+
+p {
+  font-size: medium;
+}
+
+.well {
+  opacity: .8;
+  margin-right: 5px;
+}
+
+.white {
+  background-color: white;
+  opacity: .8;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.indent {
+  margin-left: 10px;
+}
+
+.indent-right {
+  padding-right: 20px;
+}
