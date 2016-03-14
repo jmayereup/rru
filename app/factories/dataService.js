@@ -9,7 +9,7 @@ function data($firebaseArray)
   var ref = new Firebase("https://amber-torch-7838.firebaseio.com/");
   vm.ref = ref;
   vm.root = $firebaseArray(ref);
-  vm.messages = $firebaseArray(ref.child('messages'));
+  vm.messages = $firebaseArray(ref.child('msgs'));
   vm.links = $firebaseArray(ref.child('links'));
   vm.e1 = $firebaseArray(ref.child('links').orderByChild("e1").equalTo(true));
   vm.e2 = $firebaseArray(ref.child('links').orderByChild("e2").equalTo(true));

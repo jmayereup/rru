@@ -14,9 +14,9 @@ function MsgCtrl($firebaseArray, $firebaseAuth, login, data) {
   vm.canSubmit = login.canSubmit;
 //Anonymous login for read-only access
 
-  vm.addMsg = function(msg) {
-    console.log(msg.from + " " + msg.msg + " " + " " + msg.tag);
-    vm.messages.$add(msg).then(function(ref) {
+  vm.addMsg = function(m) {
+    console.log(m);
+    vm.messages.$add(m).then(function(ref) {
       var id = ref.key();
       console.log("added record with id " + id);
       vm.messages.$indexFor(id); // returns location in the array

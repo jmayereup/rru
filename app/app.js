@@ -3,8 +3,7 @@ var app = angular.module('app', ['ngRoute', 'firebase']);
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/home', {
-      templateUrl: 'app/views/home.html',
-      controllerAs: 'vm'
+      templateUrl: 'app/views/home.html'
     })
     .when('/e1', {
       templateUrl: 'app/views/e1.html',
@@ -21,8 +20,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
       controller: 'MainCtrl',
       controllerAs: 'vm'
     })
-    .when('/resources', {
-      templateUrl: 'app/views/resources.html',
+    .when('/other', {
+      templateUrl: 'app/views/other.html',
       controller: 'MainCtrl',
       controllerAs: 'vm'
     })

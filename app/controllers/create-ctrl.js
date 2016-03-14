@@ -10,9 +10,11 @@ function CreateCtrl($firebaseArray, $scope, login, data) {
   vm.links = data.links;
   vm.loadedItem = {};
   vm.details = "";
-  
+  //vm.clsDefault = "";
+
   vm.canSubmit = login.canSubmit;
   console.log("Can Submit: " + vm.canSubmit);
+
 
 
   vm.addLink = function(l) {
@@ -39,9 +41,9 @@ function CreateCtrl($firebaseArray, $scope, login, data) {
       console.log(item);
       vm.details = "";
     });
-   
+
   };
-  vm.showDetails= function(item) {
+  vm.showDetails = function(item) {
     item.showDetails = !item.showDetails;
     for (var i = 0; i < vm.links.length; i++) {
       var currentItem = vm.links[i];
@@ -51,5 +53,3 @@ function CreateCtrl($firebaseArray, $scope, login, data) {
     }
   };
 }
-  
-

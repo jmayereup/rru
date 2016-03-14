@@ -1,0 +1,71 @@
+<div class="white" ng-show="vm.canSubmit">
+  <form class="form">
+    <p>
+      <div class="form-group">
+        <input type="text" ng-model="d.type" placeholder="Type: quiz, game, info" />
+        <input type="checkbox" ng-model="d.e1" />E1
+        <input type="checkbox" ng-model="d.e2" />E2
+        <input type="checkbox" ng-model="d.e3" />E3
+        <input type="checkbox" ng-model="d.other" />Other
+        <input type="number" ng-model="d.unit" placeholder="Book Unit" />
+        <br>
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="d.title" placeholder="Enter title" />
+        <input type="text" ng-model="d.link" placeholder="www.example.com" /> Restrict to Teachers:
+        <input type="checkbox" ng-model="d.teacher" />
+      </div>
+    </p>
+    <p>Description:
+      <textarea class="form-control" rows="3" ng-model="d.description"></textarea>
+    </p>
+    <input class="btn btn-default" type="submit" value="Submit" ng-click="vm.addLink(d)" />
+  </form>
+  <div ng-repeat="l in vm.links">
+    <p>
+      <input type="text" ng-model="l.title" />
+      <button class="btn btn-info btn-xs indent" ng-click="vm.updateLink(l)">Update</button>
+      <button class="btn btn-default btn-xs indent" ng-click="vm.details = l.$id">More</button>
+      <button class="btn btn-danger btn-xs indent" ng-click="vm.deleteLink(l.$id)">X</button>
+    </p>
+    <div>
+      <form class="form" ng-show="vm.details == l.$id">
+        <p>
+          <div class="form-group">
+            <input type="text" ng-model="l.type" placeholder="Type: quiz, game, info" />
+            <input type="checkbox" ng-model="l.e1" />E1
+            <input type="checkbox" ng-model="l.e2" />E2
+            <input type="checkbox" ng-model="l.e3" />E3
+            <input type="checkbox" ng-model="l.other" />Other
+            <input type="number" ng-model="l.unit" placeholder="Book Unit" />
+            <br>
+          </div>
+          <div class="form-group">
+            <input type="text" ng-model="l.title" placeholder="Enter title" />
+            <input type="text" ng-model="l.link" placeholder="www.example.com" /> Restrict to Teachers:
+            <input type="checkbox" ng-model="l.teacher" />
+          </div>
+        </p>
+        <p>Description:
+          <textarea class="form-control" rows="3" ng-model="d.description"></textarea>
+        </p>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div ng-show="true">
+    <p>{{d.type}} Subject: Details go here</p>
+    <p>Loaded: {{d.title}}</p>
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="white" ng-show="!vm.canSubmit">
+  <h3>Please login first.</h3>
+  <p>Only teachers may add content like to contribute material. Students please use the <a href="#/home">message board</a> instead.</p>
+</div>
