@@ -2,7 +2,13 @@
   <form class="form">
     <p>
       <div class="form-group">
-        <input type="text" ng-model="d.type" placeholder="Type: quiz, game, info" />
+        <label for="Type">Type: </label>
+        <select name="Type" ng-model="d.type">
+          <option value="Quiz">Quiz</option>
+          <option value="Game">Game</option>
+          <option value="Flashcards">Flashcards</option>
+          <option value="Info">Info</option>
+        </select>
         <input type="checkbox" ng-model="d.e1" />E1
         <input type="checkbox" ng-model="d.e2" />E2
         <input type="checkbox" ng-model="d.e3" />E3
@@ -21,17 +27,16 @@
     </p>
     <input class="btn btn-default" type="submit" value="Submit" ng-click="vm.addLink(d)" />
   </form>
-  <div ng-repeat="l in vm.links">
+  <div class="form" ng-repeat="l in vm.links">
     <p>
       <input type="text" ng-model="l.title" />
-      <button class="btn btn-info btn-xs indent" ng-click="vm.updateLink(l)">Update</button>
-      <button class="btn btn-default btn-xs indent" ng-click="vm.details = l.$id">More</button>
-      <button class="btn btn-danger btn-xs indent" ng-click="vm.deleteLink(l.$id)">X</button>
+      <button class="btn btn-default btn-xs indent" ng-model="showMe" ng-click="l.showMe = !l.showMe">More</button>
+      <button class="btn btn-danger btn-xs indent" ng-click="vm.deleteLink(l.$id)">Delete</button>
     </p>
     <div>
-      <form class="form" ng-show="vm.details == l.$id">
+      <form class="form-group" ng-if="l.showMe === true">
         <p>
-          <div class="form-group">
+          <div class="form">
             <input type="text" ng-model="l.type" placeholder="Type: quiz, game, info" />
             <input type="checkbox" ng-model="l.e1" />E1
             <input type="checkbox" ng-model="l.e2" />E2
@@ -44,26 +49,17 @@
             <input type="text" ng-model="l.title" placeholder="Enter title" />
             <input type="text" ng-model="l.link" placeholder="www.example.com" /> Restrict to Teachers:
             <input type="checkbox" ng-model="l.teacher" />
-          </div>
+
         </p>
         <p>Description:
           <textarea class="form-control" rows="3" ng-model="d.description"></textarea>
         </p>
+        <button class="btn btn-info btn-md indent" ng-click="vm.updateLink(l)">Update</button>
+        </div>
       </form>
     </div>
   </div>
-
-
-
-  <div ng-show="true">
-    <p>{{d.type}} Subject: Details go here</p>
-    <p>Loaded: {{d.title}}</p>
-  </div>
-
 </div>
-
-</div>
-
 
 <div class="white" ng-show="!vm.canSubmit">
   <h3>Please login first.</h3>

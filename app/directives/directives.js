@@ -32,7 +32,7 @@ angular.module('app')
   return {
     restrict: "E",
     templateUrl: 'app/directives/list.html',
-    controller: 'MainCtrl',
+    controller: 'CreateCtrl',
     controllerAs: 'vm'
   };
 });

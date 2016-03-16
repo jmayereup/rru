@@ -4,7 +4,7 @@ body {
   background-image: url("img/background-main.jpg");
   background-repeat: repeat;
   font-size: large;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   border-bottom-style: hidden;
 
 }
@@ -30,10 +30,15 @@ p {
   border-radius: 5px;
 }
 
+
 .indent {
   margin-left: 10px;
 }
 
 .indent-right {
   padding-right: 20px;
+}
+
+.nav-pills {
+  opacity: .7;
 }

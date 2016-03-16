@@ -1,0 +1,44 @@
+<div class="white" ng-show="vm.canSubmit">
+  <form class="form">
+    <p>
+      <div class="form-group">
+        <label for="Cls">Class: </label>
+        <select name="Type" ng-model="d.cls" required>
+          <option value="e1">E1</option>
+          <option value="e2">E2</option>
+          <option value="e3">E3</option>
+          <option value="other">Other</option>
+        </select>
+        <input type="number" ng.model="unit" placeholder="Enter Unit Number" />
+        <input class="btn btn-default" type="submit" value="Submit" ng-click="vm.addCls(d, unit)" />
+      </div>
+    </p>
+  </form>
+  <div class="form" ng-repeat="l in vm.cls">
+    <p>
+      <div>{{l.cls}} - {{l.cls.units}}</div>
+      <button class="btn btn-default btn-xs indent" ng-model="showMe" ng-click="l.showMe = !l.showMe">More</button>
+      <button class="btn btn-danger btn-xs indent" ng-click="vm.deleteLink(l.$id)">Delete</button>
+    </p>
+    <div>
+      <form class="form-group" ng-if="l.showMe === true">
+        <p>
+          <label for="Cls">Class: </label>
+          <select name="Type" ng-model="l.cls" required>
+            <option value="e1">E1</option>
+            <option value="e2">E2</option>
+            <option value="e3">E3</option>
+            <option value="other">Other</option>
+          </select>
+          <input type="number" ng.model="l.cls.units = {}" placeholder="Enter Unit Number" />
+          <button class="btn btn-info btn-md indent" ng-click="vm.updateCls(l)">Update</button>
+        </p>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="white" ng-show="!vm.canSubmit">
+  <h3>Please login first.</h3>
+  <p>Only teachers may add content like to contribute material. Students please use the <a href="#/home">message board</a> instead.</p>
+</div>

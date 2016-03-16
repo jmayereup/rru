@@ -30,9 +30,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
       controller: 'LoginCtrl',
       controllerAs: 'vm'
     })
-    .when('/create', {
-      templateUrl: "app/views/create.html",
-      controller: 'CreateCtrl',
+    .when('/setup', {
+      templateUrl: "app/views/setup.html",
+      controller: 'SetupCtrl',
       controllerAs: 'vm'
     })
     .otherwise({

@@ -1,6 +1,17 @@
 <div class="white">
   <h1>Generated Data</h1>
-  <div ng-repeat="l in vm.links | filter:q track by l.$id">
-    <h4>Title: {{l}}</h4>
+  <div>
+    <h3 ng-repeat="c in vm.cls">{{c}}</h3>
+    <ul ng-repeat="l in vm.links | filter:q track by l.$id">
+      <li ng-if='l.unit === 1'>
+        <h4>{{l.title}}</h4>
+      </li>
+    </ul>
+    <h3>Unit 2</h3>
+    <ul ng-repeat="l in vm.links | filter:q track by l.$id">
+      <li ng-if='l.unit === 2'>
+        <h4>{{l.title}}</h4>
+      </li>
+    </ul>
   </div>
 </div>

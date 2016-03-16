@@ -8,9 +8,10 @@ function CreateCtrl($firebaseArray, $scope, login, data) {
   var vm = this;
   var ref = data.ref;
   vm.links = data.links;
-  vm.loadedItem = {};
-  vm.details = "";
-  //vm.clsDefault = "";
+  vm.cls = data.cls;
+  //vm.loadedItem = {};
+  vm.showMe = false;
+
 
   vm.canSubmit = login.canSubmit;
   console.log("Can Submit: " + vm.canSubmit);
@@ -36,20 +37,13 @@ function CreateCtrl($firebaseArray, $scope, login, data) {
   };
 
   vm.updateLink = function(item) {
+    item.showMe = false;
     vm.links.$save(item).then(function(ref) {
       ref.key() === item.$id;
       console.log(item);
-      vm.details = "";
+      return 0;
     });
 
   };
-  vm.showDetails = function(item) {
-    item.showDetails = !item.showDetails;
-    for (var i = 0; i < vm.links.length; i++) {
-      var currentItem = vm.links[i];
-      if (currentItem != item) {
-        currentItem.showDetails = false;
-      }
-    }
-  };
+
 }
