@@ -1,17 +1,30 @@
 <div class="white">
-  <h1>Generated Data</h1>
-  <div>
-    <h3 ng-repeat="c in vm.cls">{{c}}</h3>
-    <ul ng-repeat="l in vm.links | filter:q track by l.$id">
-      <li ng-if='l.unit === 1'>
-        <h4>{{l.title}}</h4>
-      </li>
-    </ul>
-    <h3>Unit 2</h3>
-    <ul ng-repeat="l in vm.links | filter:q track by l.$id">
-      <li ng-if='l.unit === 2'>
-        <h4>{{l.title}}</h4>
-      </li>
-    </ul>
+  <div ng-repeat="c in vm.cls" ng-show="c.clsName == cls">
+    <h2 >{{c.clsName}}</h2>
+    <div ng-repeat="u in vm.units " ng-show="u.unitCls == c.clsName">
+      <div class="pad-me">
+        <h3></b>{{u.unitName}} - <small>{{u.unitDescription}}</small></h3>
+      </div>
+      <div></div>
+      <div ng-repeat="l in vm.links">
+        <div ng-if="l.unit == u.unit && l[clsTrue]  == true" class="panel panel-default">
+          <div class="panel-heading" ng-init="showMe = true" ng-click="showMe=!showMe">
+            {{l.title}} <span class="pull-right">{{l.type}}</span>
+          </div>
+          <div class="panel-body panel-collapse" ng-class="{collapse: showMe}">
+            <div class="pull-right">
+              <a class="indent" ng-href="{{l.link}}" target="_blank">
+                <button ng-if="l.link" class='btn btn-default btn-xs'>Open</button>
+              </a>
+              <button ng-show="vm.canSubmit" class="btn btn-default btn-xs" ng-click="vm.loadLink(l)">Edit</button>
+            </div>
+            <div>
+              <span ng-bind-html="l.description"></span>
+              <small>({{l.source}})</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

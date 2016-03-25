@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'firebase']);
+var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitize']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider

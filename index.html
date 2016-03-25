@@ -8,7 +8,6 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">-->
     <link rel="stylesheet" href="app/style.css">
 
  </head>
@@ -16,18 +15,10 @@
 <body ng-app="app" ng-controller="MainCtrl as mc">
 <div layout="row" >  
   <jm-navbar></jm-navbar>
-
   <div ng-view></div> 
-
 </div>
 
 
-
-<!--  <pre>$location.path() = {{$location.path()}}</pre>
-  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
-  <pre>$route.current.params = {{$route.current.params}}</pre>
-  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
-  <pre>$routeParams = {{$routeParams}}</pre> -->
 
 
     <!--Scripts at bottom for faster loading-->
@@ -36,7 +27,10 @@
     <script src="modules/angular/angular.min.js"></script>
     <script src="modules/angular-route/angular-route.min.js"></script>
     <script src="modules/angular-aria/angular-aria.min.js"></script>
+    <script src="modules/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="modules/angularfire/dist/angularfire.min.js"></script>
+    <script src="modules/tinymce-dist/tinymce.min.js"></script>
+    <script src="modules/angular-ui-tinymce/dist/tinymce.min.js"></script>
     
     
     <!--Third Party CDN for Production--
@@ -46,9 +40,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.min.js"></script>-->
     
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>-->
-
-
+    
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <!--<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script> -->
 

@@ -19,13 +19,23 @@ angular.module('app')
   };
 })
 
-.directive('jmCreate', function(){
+.directive('jmLinks', function(){
   return {
     restrict: "E",
-    templateUrl: 'app/directives/createContent.html',
+    templateUrl: 'app/directives/links.html',
     controller: 'CreateCtrl',
     controllerAs: 'vm'
   };
+})
+
+.directive('jmLinksForm', function(){
+  return {
+    restrict: "E",
+    templateUrl: '/app/directives/links-form.html',
+    controller: 'CreateCtrl',
+    controllerAs: 'vm'
+  };
+  
 })
 
 .directive('jmList', function() {

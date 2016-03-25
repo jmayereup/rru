@@ -1,0 +1,16 @@
+<div class="white" ng-show="vm.canSubmit">
+  <jm-links-form></jm-links-form>
+  <br>
+  <div class="white">
+    Unassigned Links
+    <div ng-repeat="una in vm.links" ng-show="una.e1===false && una.e2==false && una.e3==false && una.other==false">
+      <input type="text" ng-model="una.title" placeholder="Enter title" ng-change="vm.links.$save(l)" />
+      <input type="checkbox" ng-model="una.e1" ng-change="vm.links.$save(una)" />E1
+      <input type="checkbox" ng-model="una.e2" ng-change="vm.links.$save(una)" />E2
+      <input type="checkbox" ng-model="una.e3" ng-change="vm.links.$save(una)" />E3
+      <input type="checkbox" ng-model="una.other" ng-change="vm.links.$save(una)" />Other
+      <button class="btn btn-danger btn-xs indent" ng-click="vm.links.$remove(una)">Delete</button>
+      <button class="btn btn-info btn-md indent" ng-click="vm.links.$save(una)">Save</button>
+    </div>
+  </div>
+</div>
