@@ -1,0 +1,15 @@
+<div class="white">
+  <h2>Please Login</h2>
+  <form>
+    <input type="email" name="Username" placeholder="Enter Email" ng-model="uname"/>
+    <input type="password" name="Password" placeholder="Enter Password" ng-model="pword"/>
+    <input type="submit" name="Submit" ng-click="vm.useEmail(uname, pword)"/>
+    <button type="New User"  name="New User" ng-click="vm.toggleNew = !vm.toggleNew">New User</button>
+    <input type="password" ng-show="vm.toggleNew" placeholder="Verify Password" name="Verify Password" ng-model="pword2"/>
+  </form> 
+  
+  <button ng-click="vm.useEmail(uname, pword)">Use Email</button>
+  <button ng-click="vm.useGoogle()">Use Google</button>
+  <button ng-click="vm.useFacebook()">Use Facebook</button>
+  <button ng-click="alert(auth.uid)">My ID</button>
+</div>
