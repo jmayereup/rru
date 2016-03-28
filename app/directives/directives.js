@@ -7,6 +7,8 @@ angular.module('app')
   return {
     restrict: 'E',
     templateUrl: 'app/directives/navbar.html',
+    controller: 'NavCtrl',
+    controllerAs: 'vm'
   };
 })
 
@@ -19,32 +21,21 @@ angular.module('app')
   };
 })
 
-.directive('jmLinks', function(){
-  return {
-    restrict: "E",
-    templateUrl: 'app/directives/links.html',
-    controller: 'CreateCtrl',
-    controllerAs: 'vm'
-  };
-})
 
 .directive('jmLinksForm', function(){
   return {
     restrict: "E",
-    templateUrl: '/app/directives/links-form.html',
-    controller: 'CreateCtrl',
-    controllerAs: 'vm'
+    templateUrl: '/app/directives/links-form.html'
   };
   
 })
 
-.directive('jmList', function() {
+.directive('jmLinksList', function() {
   return {
     restrict: "E",
-    templateUrl: 'app/directives/list.html',
-    controller: 'CreateCtrl',
+    templateUrl: 'app/directives/links-list.html',
+    controller: 'LinkCtrl',
     controllerAs: 'vm'
   };
 });
-
 })();

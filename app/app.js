@@ -5,25 +5,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when('/home', {
       templateUrl: 'app/views/home.html'
     })
-    .when('/e1', {
-      templateUrl: 'app/views/e1.html',
-      controller: 'MainCtrl',
-      controllerAs: 'vm'
-    })
-    .when('/e2', {
-      templateUrl: 'app/views/e2.html',
-      controller: 'MainCtrl',
-      controllerAs: 'vm'
-    })
-    .when('/e3', {
-      templateUrl: 'app/views/e3.html',
-      controller: 'MainCtrl',
-      controllerAs: 'vm'
-    })
-    .when('/other', {
-      templateUrl: 'app/views/other.html',
-      controller: 'MainCtrl',
-      controllerAs: 'vm'
+    .when('/class', {
+      templateUrl: 'app/views/class.html',
     })
     .when('/login', {
       templateUrl: 'app/views/login.html',

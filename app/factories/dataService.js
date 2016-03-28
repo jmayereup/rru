@@ -15,16 +15,10 @@
     vm.links = $firebaseArray(ref.child('links').orderByChild('order'));
     vm.cls = $firebaseArray(ref.child('cls'));
     vm.units = $firebaseArray(refUnits.orderByChild('unit'));
-    //vm.profile = $firebaseObject(ref.child('cls').child('e1').child('units'));
-    /*vm.e1 = $firebaseArray(ref.child('links').orderByChild("e1").equalTo(true));
-    vm.e2 = $firebaseArray(ref.child('links').orderByChild("e2").equalTo(true));
-    vm.e3 = $firebaseArray(ref.child('links').orderByChild("e3").equalTo(true));
-    vm.other = $firebaseArray(ref.child('links').orderByChild("other").equalTo(true));
-    vm.teacher = $firebaseArray(ref.child('links').orderByChild("teacher").equalTo(true));*/
     vm.authData = ref.getAuth();
     return vm;
     
 
-  };
+  }
 
 })();

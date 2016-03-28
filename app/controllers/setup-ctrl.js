@@ -21,7 +21,7 @@ function SetupCtrl($firebaseArray, $firebaseObject, $scope, login, data) {
   vm.showMe = false;
   vm.u = {};
   vm.canSubmit=login.canSubmit;
-  
+  console.log("Login " + login.canSubmit);
   vm.recheckStatus = function() {
     if (login.canSubmit === true) return true;
   };

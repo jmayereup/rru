@@ -10,17 +10,12 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#/e1">English 1</a></li>
-                <li><a href="#/e2">English 2</a></li>
-                <li><a href="#/e3">English 3</a></li>
-                <li><a href="#/other">Other</a></li>
                 <li><a href="#/home">Mesage Board</a></li>
+                <li ng-repeat="cls in vm.cls" ng-click="vm.assignCls(cls.clsName)">
+                    <a>{{cls.clsName}}</a></li>
                 <li><a href="#/setup">Setup</a></li>
                 <li><a href="#/login">Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
-
-
-                   

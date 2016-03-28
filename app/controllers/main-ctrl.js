@@ -5,13 +5,12 @@ angular
   .module('app')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$firebaseArray', 'data', 'login'];
+MainCtrl.$inject = ['$firebaseArray', 'login'];
 
-function MainCtrl($firebaseArray, data, login) {
+function MainCtrl($firebaseArray, login) {
     var vm = this;
     vm.canSubmit = login.canSubmit;
- 
-    
+
 }
 
 })();
