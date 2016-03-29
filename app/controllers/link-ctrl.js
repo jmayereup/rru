@@ -19,8 +19,9 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
   vm.nav = nav;
 
   vm.tinymceOptions = {
-    plugins: "image",
-    toolbar: true
+    plugins: "image media imagetools autolink link",
+    toolbar: false,
+    height: 80
     };
     
 

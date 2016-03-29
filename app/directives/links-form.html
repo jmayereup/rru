@@ -24,11 +24,10 @@
               <input type="text" ng-model="vm.item.title" placeholder="Enter title" />
               <input type="text" ng-model="vm.item.link" placeholder="http://www.example.com" />
               <input type="text" size="7" ng-model="vm.item.source" placeholder="Source" /> 
-              <input type="text" size="12" ng-model="vm.item.media" placeholder="Media" />
-              Restrict to Teachers:
+              Restrict (NA Yet):
               <input type="checkbox" ng-model="vm.item.teacher" />
             </div>
-          <input ui-tinymce="vm.tinymceOptions" class="form-control" rows="3" ng-model="vm.item.description"/>
+          <textarea ui-tinymce="vm.tinymceOptions" class="form-control" rows="3" ng-model="vm.item.description"></textarea>
           <button class="btn btn-info btn-md indent" ng-click="vm.updateLink(vm.item)">Save</button>
           <button class="btn btn-info btn-md indent" ng-click="vm.item={}">Reset</button>
           <button class="btn btn-danger btn-md pull-right" ng-click="vm.links.$remove(vm.item)">Delete</button>

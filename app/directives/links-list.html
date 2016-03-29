@@ -39,7 +39,7 @@
               <button ng-show="vm.canSubmit" class="btn btn-default btn-xs" ng-click="vm.loadLink(l)">Edit</button>
             </div>
             <div>
-              <div  ng-bind-html="l.description | sanitize"></div>
+              <div  ng-bind-html="l.description | myHtml"></div>
               <small>{{l.source}}</small>
             </div>
           </div>

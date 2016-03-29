@@ -1,6 +1,12 @@
-var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitize']);
+var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitize'])
 
-app.config(['$routeProvider', '$locationProvider',
+.filter("myHtml", ['$sce', function($sce) {
+  return function(htmlCode) {
+    return $sce.trustAsHtml(htmlCode);
+  };
+}])
+
+.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/home', {
@@ -27,8 +33,3 @@ app.config(['$routeProvider', '$locationProvider',
   }
 ]);
 
-app.filter("sanitize", ['$sce', function($sce) {
-  return function(htmlCode) {
-    return $sce.trustAsHtml(htmlCode);
-  };
-}]);
