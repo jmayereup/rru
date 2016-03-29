@@ -8,13 +8,14 @@
             </button>
             <a class="navbar-brand" href="#/home">ILC</a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="#/home">Mesage Board</a></li>
-                <li ng-repeat="cls in vm.cls" ng-click="vm.assignCls(cls.clsName)">
+        <div class="navbar-collapse collapse" id="myNavbar">
+            <ul class="nav navbar-nav collapsed" data-toggle="collapse" data-target="#myNavbar">
+                <li><a href="#/home">Message Board</a></li>
+                <li ng-repeat="cls in vm.cls" ng-click="vm.assignCls(cls.clsName)" ng-model="vm.loaded = true">
                     <a>{{cls.clsName}}</a></li>
                 <li><a href="#/setup">Setup</a></li>
                 <li><a href="#/login">Login</a></li>
+                <li ng-hide="vm.loaded===true" class="loading"><a href="">[-----Loading Class Data-----]</li>
             </ul>
         </div>
     </div>
