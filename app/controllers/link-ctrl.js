@@ -19,20 +19,10 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
   vm.nav = nav;
 
   vm.tinymceOptions = {
-    menubar: false,
     plugins: "image",
-    height:80
+    toolbar: true
     };
-
-/*  vm.addLink = function(l) {
-    console.log(l);
-    l.showMe = false;
-    vm.links.$add(l).then(function(ref) {
-      var id = ref.key();
-      console.log("added record with id " + id);
-      vm.links.$indexFor(id); // returns location in the array
-    });
-  };*/
+    
 
   vm.updateLink = function(item) {
     item.showMe = false;
@@ -42,6 +32,8 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
       console.log("added record with id " + id);
       vm.links.$indexFor(id); // returns location in the array
       vm.item ={};
+      vm.item.clsName = item.clsName;
+      vm.item.unit = item.unit;
       return 0;
     });
     }
@@ -49,6 +41,9 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
     vm.links.$save(item).then(function(ref) {
       ref.key() === item.$id;
       console.log(item);
+      vm.item ={};
+      vm.item.clsName = item.clsName;
+      vm.item.unit = item.unit;
       return 0;
     });
     }
