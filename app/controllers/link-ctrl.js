@@ -49,6 +49,13 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
     }
   };
 
+/*  vm.editLink = function(item) {
+    if(item.showMe === undefined) item.showMe = true;
+    item.showMe = !item.showMe;
+    vm.links.$save(item).then(function() {
+    });
+  };*/
+
   vm.loadLink = function(l) {
     vm.item = l;
     //vm.links.$save(l);
