@@ -100,3 +100,14 @@ p {
 .spacer {
   min-height: 355px;
 }
+
+.loading {
+    animation: colors 2s infinite;
+}
+
+@keyframes colors {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue; }
+    100% {background-color: green;}
+}
