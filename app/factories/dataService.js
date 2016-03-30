@@ -16,6 +16,7 @@
     vm.cls = $firebaseArray(ref.child('cls'));
     vm.units = $firebaseArray(refUnits.orderByChild('unit'));
     vm.authData = ref.getAuth();
+
     return vm;
     
 

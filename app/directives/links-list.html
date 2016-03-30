@@ -27,20 +27,24 @@
       </div>
       <div></div>
       <div ng-repeat="l in vm.links">
-        <div ng-if="l.unit == u.unit && l.clsName === vm.nav.clsName" class="panel panel-default">
-          <div class="panel-heading" ng-init="showMe = true" ng-click="showMe=!showMe">
-            {{l.title}} <span class="pull-right">{{l.type}}</span>
+        <div ng-if="l.unit == u.unit && l.clsName === vm.nav.clsName" class="">
+          <div class="row myPanel">
+            <div class="col-sm-10" ng-init="showMe = true" ng-click="showMe=!showMe">
+              {{l.title}}
+            </div>
+            <div class="col-sm-2">{{l.type}}
+            </div>
           </div>
-          <div class="panel-body panel-collapse animated fadeIn" ng-class="{collapse: showMe}">
-            <div class="pull-right">
-              <a class="indent" ng-href="{{l.link}}" target="_blank">
+          <div class="row myPanel" ng-hide="showMe">
+            <div class="col-sm-10">
+              <div ng-bind-html="l.description | myHtml"></div>
+              <small>{{l.source}}</small>
+            </div>
+            <div class="col-sm-2">
+              <a ng-href="{{l.link}}" target="_blank">
                 <button ng-if="l.link" class='btn btn-default btn-xs'>Open</button>
               </a>
               <button ng-show="vm.canSubmit" class="btn btn-default btn-xs" ng-click="vm.loadLink(l)">Edit</button>
-            </div>
-            <div>
-              <div  ng-bind-html="l.description | myHtml"></div>
-              <small>{{l.source}}</small>
             </div>
           </div>
         </div>
