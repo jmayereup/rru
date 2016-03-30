@@ -1,36 +1,36 @@
-        <form class="form white fixed">
-            <div class="form-group">
-              <label for="Type">Type: </label>
-              <select name="Type" ng-model="vm.item.type">
-                <option value="Graded Quiz">Graded Quiz</option>
-                <option value="Self Quiz">Self Quiz</option>
-                <option value="Game">Game</option>
-                <option value="Flashcards">Flashcards</option>
-                <option value="Info">Info</option>
-                <option value="Listening">Listening</option>
-              </select>
-              <select type="text" ng-init="" ng-model="vm.item.clsName" ng-change="">
-                <option value "">--Select a Class--</option>
-                <option ng-repeat="option in vm.cls" value="{{option.clsName}}">{{option.clsName}}</option>
-              </select>
-              <select type="text" ng-init="" ng-model="vm.item.unit" ng-change="">
-                <option value "">-Unit-</option>
-                <option ng-repeat="option in vm.units | filter: option.clsName = vm.item.clsName" value="{{option.unit}}">{{option.unit}}</option>
-              </select>
-              <input type="text" size="5" ng-model="vm.item.order" placeholder="Order" />
-              <br>
-            </div>
-            <div class="form-group">
-              <input type="text" ng-model="vm.item.title" placeholder="Enter title" />
-              <input type="text" ng-model="vm.item.link" placeholder="http://www.example.com" />
-              <input type="text" size="7" ng-model="vm.item.source" placeholder="Source" /> 
-              Restrict (NA Yet):
-              <input type="checkbox" ng-model="vm.item.teacher" />
-            </div>
-          <textarea ui-tinymce="vm.tinymceOptions" class="form-control" rows="3" ng-model="vm.item.description"></textarea>
-          <button class="btn btn-info btn-md indent" ng-click="vm.updateLink(vm.item)">Save</button>
-          <button class="btn btn-info btn-md indent" ng-click="vm.item={}">Reset</button>
-          <button class="btn btn-danger btn-md pull-right" ng-click="vm.links.$remove(vm.item)">Delete</button>
-        </form>
+<form class="form white fixed">
+    <div class="form-group">
+      <label for="Type">Type: </label>
+      <select name="Type" ng-model="vm.item.type">
+        <option value="Graded Quiz">Graded Quiz</option>
+        <option value="Self Quiz">Self Quiz</option>
+        <option value="Game">Game</option>
+        <option value="Flashcards">Flashcards</option>
+        <option value="Info">Info</option>
+        <option value="Listening">Listening</option>
+      </select>
+      <select type="text" ng-init="" ng-model="vm.item.clsName" ng-change="">
+        <option value "">--Select a Class--</option>
+        <option ng-repeat="option in vm.cls" value="{{option.clsName}}">{{option.clsName}}</option>
+      </select>
+      <select type="text" ng-init="" ng-model="vm.item.unit" ng-change="">
+        <option value "">-Unit-</option>
+        <option ng-repeat="option in vm.units | filter: option.clsName = vm.item.clsName" value="{{option.unit}}">{{option.unit}}</option>
+      </select>
+      <input type="text" size="5" ng-model="vm.item.order" placeholder="Order" />
+      <br>
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="vm.item.title" placeholder="Enter title" />
+      <input type="text" ng-model="vm.item.link" placeholder="http://www.example.com" />
+      <input type="text" size="7" ng-model="vm.item.source" placeholder="Source" /> 
+      Restrict (NA Yet):
+      <input type="checkbox" ng-model="vm.item.teacher" />
+    </div>
+  <textarea ui-tinymce="vm.tinymceOptions" class="form-control" rows="3" ng-model="vm.item.description"></textarea>
+  <button class="btn btn-info btn-md indent" ng-click="vm.updateLink(vm.item)">Save</button>
+  <button class="btn btn-info btn-md indent" ng-click="vm.item={}">Reset</button>
+  <button class="btn btn-danger btn-md pull-right" ng-click="vm.links.$remove(vm.item)">Delete</button>
+</form>
 
 

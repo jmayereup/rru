@@ -19,7 +19,8 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
   vm.nav = nav;
 
   vm.tinymceOptions = {
-    plugins: "image media imagetools autolink link",
+    plugins: "image media imagetools autolink link code",
+    menubar: 'file edit insert format table tools',
     toolbar: false,
     height: 80
     };

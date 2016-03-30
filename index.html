@@ -8,13 +8,14 @@
     
     <link rel="stylesheet" href="modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="modules/flexboxgrid/css/flexboxgrid.min.css">-->
     <link rel="stylesheet" href="modules/jquery-ui/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="app/style.css">
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 
  </head>
 
-<body ng-app="app" ng-controller="MainCtrl as mc">
+<body ng-app="app">
 <div layout="row" >  
   <jm-navbar></jm-navbar>
   <div ng-view></div> 
@@ -54,7 +55,6 @@
     <script src="app/factories/dataService.js"></script>
     <script src="app/factories/loginService.js"></script>
     <script src="app/factories/navService.js"></script>
-    <script src="app/controllers/main-ctrl.js"></script>
     <script src="app/controllers/msg-ctrl.js"></script>
     <script src="app/controllers/login-ctrl.js"></script>
     <script src="app/controllers/link-ctrl.js"></script>
