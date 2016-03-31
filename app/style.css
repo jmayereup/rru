@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 41px;
   background-image: url("img/background-main.jpg");
   background-repeat: repeat;
   font-size: large;
@@ -23,7 +23,6 @@ p {
 .white {
   background-color: white;
   opacity: .8;
-  margin: 5px;
   padding: 7px;
   border-radius: 5px;
 }
@@ -38,7 +37,6 @@ p {
   border-style: solid;
   border-width: 1px;
   opacity: .8;
-  margin: 1px;
   padding: 2px;
   border-radius: 5px;
   position: absolute;
@@ -117,13 +115,16 @@ p {
 .myPanel {
     border-style:solid;
     border-width: 1px;
-    border-color: lightgrey;
+    border-color: #999;
     border-radius: 3px;
     margin:0px;
-    padding:2px 0px 2px 0px;
+    padding:5px 0px 5px 0px;
 }
 
 .nb {
     border-style: none;
 }
 
+.grey {
+  background-color: #DDD;
+}

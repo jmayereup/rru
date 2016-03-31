@@ -1,8 +1,7 @@
 <!--Data Form -->
 <div>
-<div class="white">
-  
-    <h3>Message Board: </h3>
+<div>
+    <h3>Message Board</h3>
     <div ng-repeat="x in vm.messages">
       <div><h4>{{x.from}}<span class="small indent">#{{x.tag}}</span>
         <button ng-hide="!vm.canSubmit" type="button" value="Delete" ng-click="vm.messages.$remove(x)" class="btn btn-xs btn-danger pull-right">DELETE</button></h4>
@@ -10,7 +9,6 @@
       <blockquote><p>{{x.msg}}</p></blockquote>
     </div>
   </div>
-  <div></div>
   <div class="white" ng-hide="!vm.canSubmit">
     <form>
       <p>From:

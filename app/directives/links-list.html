@@ -1,9 +1,10 @@
 <!--Creates a list of generated contenct sorted by class and unit. -->
+<div class="col-lg-10 col-lg-offset-1 white">
 <div ng-show="vm.canSubmit">
   <div ng-class="{spacer: vm.canSubmit}">
     <jm-links-form></jm-links-form>
   </div>
-  <div class="white">
+  <div class="">
     Unassigned Links
     <div ng-repeat="una in vm.links" ng-show="una.clsName == false || una.clsName === undefined || una.unit === undefined">
       <input type="text" ng-model="una.title" placeholder="Enter title" ng-change="vm.links.$save(una)" /> {{una.unit}}
@@ -18,24 +19,24 @@
   </div>
 </div>
 
-<div class="white">
+<div>
   <div ng-repeat="c in vm.cls" ng-show="c.clsName == vm.nav.clsName">
     <h2>{{c.clsName}}</h2>
     <div ng-repeat="u in vm.units " ng-show="u.unitCls == vm.nav.clsName">
-      <div class="pad-me">
+      <div class="myPanel nb">
         <h3></b>{{u.unitName}} - <small>{{u.unitDescription}}</small></h3>
       </div>
       <div></div>
       <div ng-repeat="l in vm.links">
         <div ng-if="l.unit == u.unit && l.clsName === vm.nav.clsName" class="">
-          <div class="row myPanel">
+          <div class="row myPanel grey">
             <div class="col-sm-10" ng-init="showMe = true" ng-click="showMe=!showMe">
               {{l.title}}
             </div>
             <div class="col-sm-2">{{l.type}}
             </div>
           </div>
-          <div class="row myPanel" ng-hide="showMe">
+          <div class="row myPanel nb" ng-hide="showMe">
             <div class="col-sm-10">
               <div ng-bind-html="l.description | myHtml"></div>
               <small>{{l.source}}</small>
@@ -51,4 +52,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
