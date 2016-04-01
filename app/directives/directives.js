@@ -6,7 +6,7 @@ angular.module('app')
 .directive('jmNavbar', function() {
   return {
     restrict: 'E',
-    templateUrl: 'app/directives/navbar.html',
+    templateUrl: './app/directives/navbar.html',
     controller: 'NavCtrl',
     controllerAs: 'vm'
   };
@@ -15,7 +15,7 @@ angular.module('app')
 .directive('jmMsgBoard', function() {
   return {
     restrict: "E",
-    templateUrl: 'app/directives/msgBoard.html',
+    templateUrl: './app/directives/msgBoard.html',
     controller: 'MsgCtrl',
     controllerAs: 'vm'
   };
@@ -25,15 +25,15 @@ angular.module('app')
 .directive('jmLinksForm', function(){
   return {
     restrict: "E",
-    templateUrl: '/app/directives/links-form.html'
+    templateUrl: './app/directives/links-form.html'
   };
-  
+
 })
 
 .directive('jmLinksList', function() {
   return {
     restrict: "E",
-    templateUrl: 'app/directives/links-list.html',
+    templateUrl: './app/directives/links-list.html',
     controller: 'LinkCtrl',
     controllerAs: 'vm'
   };
