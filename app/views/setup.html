@@ -37,7 +37,7 @@
         <div class="white">
             <h3>Edit Class</h3>
             <div ng-repeat="listCls in vm.cls">
-                {{listCls.clsName}}
+                <input type="text" class="form-control" ng-model="listCls.clsName" ng-change="vm.cls.$save(listCls)" required />
                 <textarea class="form-control" rows="2" ng-model="listCls.clsDescription" ng-change="vm.cls.$save(listCls)"></textarea>
             </div>
             <button class="btn btn-info btn-md space-me" ng-click="vm.addCls()">Add New Class</button>
