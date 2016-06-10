@@ -24,7 +24,8 @@
     <h2>{{c.clsName}}</h2>
     <div ng-repeat="u in vm.units " ng-show="u.unitCls == vm.nav.clsName">
       <div class="myPanel nb">
-        <h3></b>{{u.unitName}} - <small>{{u.unitDescription}}</small></h3>
+        <h3>{{u.unitName}}</h3>
+        <h4>{{u.unitDescription}}</h4>
       </div>
       <div></div>
       <div ng-repeat="l in vm.links">
