@@ -8,6 +8,9 @@
         <option value="Flashcards">Flashcards</option>
         <option value="Info">Info</option>
         <option value="Listening">Listening</option>
+        <option value="Unit">Unit</option>
+        <option value="Grammar">Grammar</option>
+        <option value="Vocabulary">Vocabulary</option>
       </select>
       <select type="text" ng-init="" ng-model="vm.item.clsName" ng-change="">
         <option value "">--Select a Class--</option>
@@ -23,7 +26,7 @@
     <div class="form-group">
       <input type="text" ng-model="vm.item.title" placeholder="Enter title" />
       <input type="text" ng-model="vm.item.link" placeholder="http://www.example.com" />
-      <input type="text" size="7" ng-model="vm.item.source" placeholder="Source" /> 
+      <input type="text" size="7" ng-model="vm.item.source" placeholder="Source" />
       Restrict (NA Yet):
       <input type="checkbox" ng-model="vm.item.teacher" />
     </div>
@@ -32,5 +35,3 @@
   <button class="btn btn-info btn-md indent" ng-click="vm.item={}">Reset</button>
   <button class="btn btn-danger btn-md pull-right" ng-click="vm.links.$remove(vm.item)">Delete</button>
 </form>
-
-
