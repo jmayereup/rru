@@ -88,13 +88,24 @@ p {
     position: fixed;
     right: 0;
     left: 0;
+    top: 100px;
     z-index: 1000;
-    height: 500px;
+    height: 450px;
     overflow-y: auto;
     background-color: #BBBBBB;
     opacity: 1;
 }
 
+.fixed-small {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    height: 54px;
+    overflow-y: auto;
+    background-color: #BBBBBB;
+    opacity: 1;
+}
 .spacer {
   min-height: 355px;
 }

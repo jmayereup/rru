@@ -1,6 +1,6 @@
 angular
-.module('app')
-.controller('LinkCtrl', LinkCtrl);
+    .module('app')
+    .controller('LinkCtrl', LinkCtrl);
 
 LinkCtrl.$inject = ["$firebaseArray", "$scope", "login", "data", "nav"];
 
@@ -23,7 +23,7 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
     plugins: "image imagetools autolink link code",
     menubar: 'file edit insert format table tools',
     toolbar: false,
-    height: 250
+    height: 260
   };
 
 
