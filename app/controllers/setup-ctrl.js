@@ -33,7 +33,7 @@ function SetupCtrl($firebaseArray, $firebaseObject, $scope, login, data) {
   function useGoogle() {
     login.useGoogle();
   }
-  
+
   console.log("SetupCtrl - Can Submit " + vm.canSubmit);
 
   vm.addUnit = function(clsName) {

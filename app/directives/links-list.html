@@ -1,21 +1,8 @@
-<!--Creates a list of generated contenct sorted by class and unit. -->
+<!--Creates a list of generated content sorted by class and unit. -->
 <div class="col-lg-10 col-lg-offset-1 white">
 <div ng-show="vm.canSubmit">
   <div ng-class="{spacer: vm.canSubmit}">
     <jm-links-form></jm-links-form>
-  </div>
-  <div class="">
-    Unassigned Links
-    <div ng-repeat="una in vm.links" ng-show="una.clsName == false || una.clsName === undefined || una.unit === undefined">
-      <input type="text" ng-model="una.title" placeholder="Enter title" ng-change="vm.links.$save(una)" /> {{una.unit}}
-      <select type="text" ng-init="" ng-model="una.clsName" ng-change="vm.links.$save(una)">
-        <option value "">--Select a Class--</option>
-        <option ng-repeat="option in vm.cls" value="{{option.clsName}}">{{option.clsName}}</option>
-      </select>
-      <button class="btn btn-default btn-xs indent" ng-click="vm.loadLink(una)">Edit</button>
-      <button class="btn btn-danger btn-xs indent" ng-click="vm.links.$remove(una)">Delete</button>
-      <button class="btn btn-info btn-xs indent" ng-click="vm.links.$save(una)">Save</button>
-    </div>
   </div>
 </div>
 
@@ -54,4 +41,20 @@
     </div>
   </div>
 </div>
+<div></div>
+<div class="col-lg-10 col-lg-offset-1 white" ng-show="vm.canSubmit">
+  <h2>All Links</h2>
+  <div ng-repeat="una in vm.allLinks">
+    <li>{{una.order}} - {{una.unit}} - {{una.title}} - {{una.clsName}}
+    <!-- <li type="text" ng-init="" ng-model="una.clsName" ng-change=""></li> -->
+      <!-- <option value "">--Select a Class--</option>
+      <option ng-repeat="option in vm.cls" value="{{option.clsName}}">{{option.clsName}}</option>
+    </select> -->
+      <button class="btn btn-default btn-xs indent" ng-click="vm.loadLink(una)">Edit</button>
+      <input  type="text" ng-model="una.order" size="4">
+      <button class="btn btn-default btn-xs indent" ng-click="vm.updateLink(una)">Save</button>
+    </li>
+    <!-- <button class="btn btn-danger btn-xs indent disabled" ng-click="vm.links.$remove(una)">Delete</button>
+    <button class="btn btn-info btn-xs indent disabled" ng-click="vm.links.$save(una)">Save</button> -->
+  </div>
 </div>

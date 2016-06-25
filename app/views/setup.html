@@ -2,6 +2,7 @@
 <div></div>
 <div class="white" ng-show="vm.canSubmit">
     <div>
+        <p>Data is being restructured. Create units in the same place as classroom content.</p>
         <select type="text" ng-init="" ng-model="option.clsName" ng-change="">
             <option value "">--Select a Class--</option>
             <option ng-repeat="option in vm.cls" value="{{option.clsName}}">{{option.clsName}}</option>
@@ -28,7 +29,7 @@
                             <option ng-repeat="option in vm.cls" value="{{option.clsName}}">{{option.clsName}}</option>
                         </select>
                     </div>
-                    <button class="btn btn-info btn-md space-me" ng-click="vm.addUnit(option.clsName)">Add New Unit</button>
+                    <!-- <button class="btn btn-info btn-md space-me" ng-click="vm.addUnit(option.clsName)">Add New Unit</button> -->
                     <button class="btn btn-info btn-md space-me indent" ng-click="vm.units.$remove(ua)">Delete</button>
                 </div>
             </form>
@@ -39,6 +40,7 @@
             <div ng-repeat="listCls in vm.cls">
                 <input type="text" class="form-control" ng-model="listCls.clsName" ng-change="vm.cls.$save(listCls)" required />
                 <textarea class="form-control" rows="2" ng-model="listCls.clsDescription" ng-change="vm.cls.$save(listCls)"></textarea>
+                <button class="btn btn-info btn-md space-me danger" ng-click="vm.deleteCls(listCls.$id)">Delete Class</button>
             </div>
             <button class="btn btn-info btn-md space-me" ng-click="vm.addCls()">Add New Class</button>
         </div>
