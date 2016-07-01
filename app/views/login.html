@@ -1,6 +1,11 @@
-<div class="white">
+<div class="col-lg-10 col-lg-offset-1 white">
   <h2>Welcome</h2>
-  <p><button ng-click="vm.canEdit()">Can I Edit?</button> {{vm.canSubmit}}</p>
+  <p>Logging in with your google account will allow you to preview the edit features.
+    However, you will not be able to save any changes. Contact Jacob if you would
+    like to be able to edit content.</p>
+  <button ng-click='vm.useGoogle()' class="btn">Login</button>
+  <button ng-click='vm.setup()' class="btn">Add a Class</button>
+  <!-- <p><button ng-click="vm.canEdit()">Can I Edit?</button> {{vm.canSubmit}}</p> -->
 
   <!-- <form>
     <input type="email" name="Username" placeholder="Enter Email" ng-model="uname"/>

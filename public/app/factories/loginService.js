@@ -10,21 +10,21 @@
     var vm = this;
     vm.canSubmit = {};
     vm.canSubmit = false;
-    vm.authData =
-    //ref.authAnonymously(authHandler); /anonymous login.
+    // vm.authData =
 
     this.useGoogle = function() {
       ref.authWithOAuthPopup("google", this.authHandler);
+      $location.path('/login');
     };
-    this.useFacebook = function() {
-      ref.authWithOAuthPopup("facebook", this.authHandler);
-    };
-    this.useEmail = function(userEmail, userPassword) {
-      ref.authWithPassword({
-        email: userEmail,
-        password: userPassword
-      }, authHandler);
-    };
+    // this.useFacebook = function() {
+    //   ref.authWithOAuthPopup("facebook", this.authHandler);
+    // };
+    // this.useEmail = function(userEmail, userPassword) {
+    //   ref.authWithPassword({
+    //     email: userEmail,
+    //     password: userPassword
+    //   }, authHandler);
+    // };
 
     // Create a callback to handle the result of the authentication
     this.authHandler = function(error, authData) {

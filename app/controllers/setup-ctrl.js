@@ -22,15 +22,16 @@ function SetupCtrl($firebaseArray, $firebaseObject, $scope, login, data) {
   vm.u = {};
   vm.canSubmit=login.canSubmit;
   console.log("Login " + login.canSubmit);
-  vm.recheckStatus = function() {
-    if (login.canSubmit === true) return true;
-  };
 
-  vm.callLogin = function() {
-    useGoogle();
-  };
+  // vm.recheckStatus = function() {
+  //   if (login.canSubmit === true) return true;
+  // };
 
-  function useGoogle() {
+  // vm.callLogin = function() {
+  //   login.useGoogle();
+  // };
+
+  this.useGoogle = function() {
     login.useGoogle();
   }
 
