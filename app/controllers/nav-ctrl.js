@@ -2,9 +2,9 @@ angular
   .module('app')
   .controller('NavCtrl', NavCtrl);
 
-NavCtrl.$inject = ["nav", "$location"];
+NavCtrl.$inject = ["nav", "$location", "login"];
 
-function NavCtrl(nav, $location) {
+function NavCtrl(nav, $location, login) {
 
   var vm = this;
   vm.cls = nav.cls; //for menu
@@ -22,6 +22,9 @@ function NavCtrl(nav, $location) {
       return false;
     });
 
+    vm.useGoogle = function() {
+      return login.useGoogle();
+    };
 //console.log("Nav1: " + vm.clsName);
 
 

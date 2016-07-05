@@ -5,39 +5,55 @@
     .module('app')
     .factory("login", login);
 
-  function login($firebaseArray, data) {
+  function login($firebaseArray, data, $location) {
     var ref = data.ref;
     var vm = this;
+    vm.canSubmit = {};
     vm.canSubmit = false;
-
-    //ref.authAnonymously(authHandler); /anonymous login.
+    // vm.authData =
 
     this.useGoogle = function() {
-      ref.authWithOAuthPopup("google", authHandler);
+      ref.authWithOAuthPopup("google", this.authHandler);
+      $location.path('/login');
     };
-    this.useFacebook = function() {
-      ref.authWithOAuthPopup("facebook", authHandler);
-    };
-    this.useEmail = function(userEmail, userPassword) {
-      ref.authWithPassword({
-        email: userEmail,
-        password: userPassword
-      }, authHandler);
-    };
-
+    // this.useFacebook = function() {
+    //   ref.authWithOAuthPopup("facebook", this.authHandler);
+    // };
+    // this.useEmail = function(userEmail, userPassword) {
+    //   ref.authWithPassword({
+    //     email: userEmail,
+    //     password: userPassword
+    //   }, authHandler);
+    // };
 
     // Create a callback to handle the result of the authentication
-    function authHandler(error, authData) {
+    this.authHandler = function(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
       }
       else {
         console.log("User " + authData.uid + " is logged in with " + authData.provider + authData);
         vm.canSubmit = authData.provider === 'google';
+        vm.authData = authData;
         if (vm.canSubmit == true) {
           console.log("Can Submit too!");
+          return true;
         }
       }
+    };
+
+    this.createUser = function(username, password) {
+      ref.createUser({
+        email: username,
+        password: password
+      }, function(error, userData) {
+        if (error) {
+          console.log("Error creating user:", error);
+        }
+        else {
+          console.log("Successfully created user account with uid:", userData.uid);
+        }
+      });
     }
 
     return vm;

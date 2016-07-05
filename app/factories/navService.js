@@ -7,9 +7,9 @@
   function nav(data) {
     var vm = this;
     vm.cls = data.cls;
-    vm.clsName = "nothing in service";
+    vm.clsName = "English 1";
     return vm;
-    
+
 
   }
 

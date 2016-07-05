@@ -1,5 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitize'])
-
+var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitize', 'angular-google-adsense'])
 .filter("myHtml", ['$sce', function($sce) {
   return function(htmlCode) {
     return $sce.trustAsHtml(htmlCode);
@@ -13,7 +12,7 @@ var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitiz
         templateUrl: 'app/views/home.html'
       })
       .when('/class', {
-        templateUrl: 'app/views/class.html',
+        templateUrl: 'app/views/class.html'
       })
       .when('/login', {
         templateUrl: 'app/views/login.html',
@@ -32,4 +31,3 @@ var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitiz
 
   }
 ]);
-

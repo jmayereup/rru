@@ -3,16 +3,7 @@
   "description": "A classroom content management app built of firebase",
   "version": "0.1.1",
   "dependencies": {
-    "angular": "~1.5.0",
-    "angular-aria": "~1.5.0",
-    "angular-route": "~1.5.0",
-    "angular-sanitize": "~1.5.2",
     "angular-ui-tinymce": "~0.0.14",
-    "angularfire": "~1.1.4",
-    "bootstrap": "~3.3.6",
-    "firebase": "~2.4.1",
-    "jquery": "^2.2.2",
-    "jquery-ui": "~1.11.4",
-    "normalize.css": "~4.0.0"
+
   }
 }
