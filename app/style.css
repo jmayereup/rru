@@ -25,6 +25,7 @@ p {
 .white-solid {
     background-color: white;
     opacity: 1;
+    height: 150px;
 }
 .whitebox {
     border: black;
@@ -79,6 +80,7 @@ p {
     background-color: #BBBBBB;
     opacity: 1;
 }
+
 .fixed-small {
     position: fixed;
     right: 0;
