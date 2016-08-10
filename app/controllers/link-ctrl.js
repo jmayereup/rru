@@ -1,6 +1,6 @@
 angular
-.module('app')
-.controller('LinkCtrl', LinkCtrl);
+    .module('app')
+    .controller('LinkCtrl', LinkCtrl);
 
 LinkCtrl.$inject = ["$firebaseArray", "$scope", "login", "data", "nav", "$routeParams"];
 
@@ -28,9 +28,15 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav, $routeParams) {
   else vm.nav = "Other";
 
   vm.tinymceOptions = {
+<<<<<<< HEAD
+    plugins: "image imagetools autolink link code",
+    menubar: 'file edit insert format table tools',
+    toolbar: false,
+=======
     plugins: "image link code advlist",
     menubar: false,
     toolbar: 'undo redo styleselect image link bold italic alignleft aligncenter alignright bullist numlist outdent indent code',
+>>>>>>> gh-pages-JRM
     height: 260
   };
 
