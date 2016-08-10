@@ -19,21 +19,12 @@
       <!-- <select type="text" ng-init="" ng-model="vm.item.unit" ng-change="">
         <option value "">-Unit-</option>
         <option ng-repeat="option in vm.units | filter: option.clsName = vm.item.clsName" value="{{option.unit}}">{{option.unit}}</option>
-<<<<<<< HEAD
-      </select>
-      <input type="text" size="5" ng-model="vm.item.order" placeholder="Order" />
-      <button ng-init="toggleForm = true" ng-click="toggleForm = !toggleForm">Hide</button>
-      <br>
-    </div>
-    <div class="fixed" ng-show="toggleForm">
-=======
       </select> -->
       Order (Class.Unit.Lesson): <input type="text" size="8" ng-model="vm.item.order" placeholder="CC.UU.LL"/>
       <button ng-click="vm.toggleForm = !vm.toggleForm">Detail</button>
       <span>{{vm.item.$id}}</span>
     </div>
     <div class="col-lg-10 col-lg-offset-1 white fixed" ng-show="vm.toggleForm">
->>>>>>> gh-pages-JRM
     <div class="form-group">
       <input type="text" ng-model="vm.item.title" placeholder="Enter title" />
       <input type="text" ng-model="vm.item.link" placeholder="http://www.example.com" />
