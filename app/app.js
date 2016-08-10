@@ -8,13 +8,11 @@ var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitiz
 .config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/msg', {
+      .when('/home', {
         templateUrl: 'app/views/home.html'
       })
-      .when('/class/:cls', {
-        templateUrl: 'app/views/class.html',
-        controller: 'LinkCtrl',
-        controllerAs: 'vm'
+      .when('/class', {
+        templateUrl: 'app/views/class.html'
       })
       .when('/login', {
         templateUrl: 'app/views/login.html',
@@ -26,15 +24,9 @@ var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitiz
         controller: 'SetupCtrl',
         controllerAs: 'vm'
       })
-      .when('/', {
-        templateUrl: "app/views/class.html",
-        controller: 'LinkCtrl',
-        controllerAs: 'vm'
-      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
       });
-    $locationProvider.html5Mode(true);
 
 
   }
