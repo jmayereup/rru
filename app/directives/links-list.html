@@ -8,7 +8,7 @@
 
 <div class="col-lg-10 col-lg-offset-1 white">
     <div ng-repeat="l in vm.links">
-        <div ng-if="l.clsName === vm.nav.clsName">
+        <div ng-if="l.clsName === vm.nav">
             <div class="row myPanel grey" ng-class="{unit: l.type == 'Unit'}">
                 <div class="col-sm-10" ng-init="showMe = (l.type == 'Unit')" ng-click="showMe=!showMe">
                     <h4>{{l.title}}</h4>

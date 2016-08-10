@@ -2,9 +2,9 @@ angular
     .module('app')
     .controller('LinkCtrl', LinkCtrl);
 
-LinkCtrl.$inject = ["$firebaseArray", "$scope", "login", "data", "nav"];
+LinkCtrl.$inject = ["$firebaseArray", "$scope", "login", "data", "nav", "$routeParams"];
 
-function LinkCtrl($firebaseArray, $scope, login, data, nav) {
+function LinkCtrl($firebaseArray, $scope, login, data, nav, $routeParams) {
 
   var vm = this;
   var ref = data.ref;
@@ -18,7 +18,14 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav) {
   vm.canSubmit = login.canSubmit;
   console.log("Can Submit: " + vm.canSubmit);
 
-  vm.nav = nav;
+  vm.nav = "none";
+
+  if($routeParams.cls === "e1") vm.nav = "English 1";
+  else if($routeParams.cls === "e2") vm.nav = "English 2";
+  else if($routeParams.cls === "e3") vm.nav = "English 3";
+  else if($routeParams.cls === "other") vm.nav = "Other";
+  else if($routeParams.cls === "teacher") vm.nav = "Teacher";
+  else vm.nav = "Other";
 
   vm.tinymceOptions = {
 <<<<<<< HEAD
