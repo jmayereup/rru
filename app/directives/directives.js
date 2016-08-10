@@ -29,6 +29,14 @@ angular.module('app')
   };
 
 })
+.directive('jmAdsense', function(){
+  return {
+    restrict: "E",
+    templateUrl: './app/directives/adsense.html',
+    controller: 'AdCtrl',
+    controllerAs: 'vm'
+  };
+})
 
 .directive('jmLinksList', function() {
   return {
