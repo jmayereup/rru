@@ -12,9 +12,9 @@ var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitiz
         templateUrl: 'app/views/home.html'
       })
       .when('/class/:cls', {
-        templateUrl: 'app/views/class.html',
-        controller: 'LinkCtrl',
-        controllerAs: 'vm'
+        templateUrl: 'app/views/class.html'
+        // controller: 'LinkCtrl',
+        // controllerAs: 'vm'
       })
       .when('/login', {
         templateUrl: 'app/views/login.html',
@@ -27,12 +27,10 @@ var app = angular.module('app', ['ngRoute', 'firebase', 'ui.tinymce', 'ngSanitiz
         controllerAs: 'vm'
       })
       .when('/', {
-        templateUrl: "app/views/class.html",
-        controller: 'LinkCtrl',
-        controllerAs: 'vm'
+        templateUrl: "app/views/home.html",
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/msg'
       });
     $locationProvider.html5Mode(true);
 

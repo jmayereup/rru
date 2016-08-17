@@ -43,7 +43,7 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav, $routeParams) {
     }
     if (item.$id === undefined) {
       vm.links.$add(item).then(function(ref) {
-        var id = ref.key();
+        var id = ref.key;
         console.log("added record with id " + id);
         vm.links.$indexFor(id); // returns location in the array
         vm.item.clsName = item.clsName;
@@ -57,7 +57,7 @@ function LinkCtrl($firebaseArray, $scope, login, data, nav, $routeParams) {
     }
     if (item.$id != undefined){
       vm.links.$save(item).then(function(ref) {
-        ref.key() === item.$id;
+        ref.key === item.$id;
         console.log(item);
         vm.item ={};
         vm.item.clsName = item.clsName;

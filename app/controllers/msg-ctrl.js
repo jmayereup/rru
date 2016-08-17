@@ -18,15 +18,4 @@ function MsgCtrl($firebaseArray, $firebaseAuth, login, data) {
             vm.messages.$indexFor(id); // returns location in the array
         });
     };
-    // var firepadRef = new Firebase('https://amber-torch-7838.firebaseio.com/firepads/');
-    // var codeMirror = CodeMirror(document.getElementById('firepad'), {
-    //     lineWrapping: true
-    // });
-    // var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
-    //     richTextShortcuts: true,
-    //     richTextToolbar: true,
-    //     defaultText: 'Hello, World!'
-    // });
-
-
 };
