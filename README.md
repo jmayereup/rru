@@ -1,2 +1,0 @@
-# rru
-Teacher Website
