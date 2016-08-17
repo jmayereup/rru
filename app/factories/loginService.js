@@ -7,54 +7,37 @@
 
   function login($firebaseArray, data, $location) {
     var ref = data.ref;
+    var auth = firebase.auth();
+    // vm.authData = auth;
     var vm = this;
     vm.canSubmit = {};
     vm.canSubmit = false;
-    // vm.authData =
 
     this.useGoogle = function() {
-      ref.authWithOAuthPopup("google", this.authHandler);
-      $location.path('/login');
-    };
-    // this.useFacebook = function() {
-    //   ref.authWithOAuthPopup("facebook", this.authHandler);
-    // };
-    // this.useEmail = function(userEmail, userPassword) {
-    //   ref.authWithPassword({
-    //     email: userEmail,
-    //     password: userPassword
-    //   }, authHandler);
-    // };
-
-    // Create a callback to handle the result of the authentication
-    this.authHandler = function(error, authData) {
-      if (error) {
-        console.log("Login Failed!", error);
-      }
-      else {
-        console.log("User " + authData.uid + " is logged in with " + authData.provider + authData);
-        vm.canSubmit = authData.provider === 'google';
-        vm.authData = authData;
-        if (vm.canSubmit == true) {
-          console.log("Can Submit too!");
-          return true;
-        }
-      }
-    };
-
-    this.createUser = function(username, password) {
-      ref.createUser({
-        email: username,
-        password: password
-      }, function(error, userData) {
-        if (error) {
-          console.log("Error creating user:", error);
-        }
-        else {
-          console.log("Successfully created user account with uid:", userData.uid);
-        }
+      var provider = new firebase.auth.GoogleAuthProvider();
+      auth.signInWithPopup(provider).then(function(result) {
+        $location.path('/login');
+        console.log("User " + result.user.uid + " is logged in with " + provider);
+        vm.canSubmit = true;
+        console.log("Can Edit");
+      }).catch(function(error) {
+        console.log("Login Failed");
       });
-    }
+    };
+
+    //   this.createUser = function(username, password) {
+    //     ref.createUser({
+    //       email: username,
+    //       password: password
+    //     }, function(error, userData) {
+    //       if (error) {
+    //         console.log("Error creating user:", error);
+    //       }
+    //       else {
+    //         console.log("Successfully created user account with uid:", userData.uid);
+    //       }
+    //     });
+    //   }
 
     return vm;
   }
